@@ -228,11 +228,6 @@ class Fun(commands.Cog):
         embed.set_image(url=post['url'])
         await ctx.send(embed=embed)
         
-    @reddit.error
-    async def on_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            seconds = round(error.retry_after, 2)
-            return await ctx.send("You are being rated-limited, please try again in {seconds} seconds!")
     
 
 def setup(bot):
